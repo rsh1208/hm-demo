@@ -8,7 +8,7 @@
       <div class="img">
         <img :src="fixedUrl(post.cover[0].url)" alt="" />
         <div class="play">
-          <i class="iconfont iconshipin"></i>
+          <i class="iconfont iconshipin">111111111111111111111111</i>
         </div>
       </div>
       <div class="bottom">
