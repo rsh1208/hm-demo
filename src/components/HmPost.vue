@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="bottom">
-        <span>{{ post.user.nickname }}</span>
+        <span>{{ post.user.nickname }}222222222222222222</span>
         <span>{{ post.comments.length }}跟帖</span>
       </div>
     </div>
