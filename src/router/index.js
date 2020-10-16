@@ -49,7 +49,8 @@ const router = new VueRouter({
   ]
 })
 router.beforeEach((to, from, next) => {
-  if (to.path === '/user') {
+  const authPath = ['/user', '/my-follow', 'my-comments', '/my-star', '/edit']
+  if (authPath.includes(to.path)) {
     const token = localStorage.getItem('token')
     if (token) {
       next()
