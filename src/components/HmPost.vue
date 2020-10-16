@@ -8,11 +8,11 @@
       <div class="img">
         <img :src="fixedUrl(post.cover[0].url)" alt="" />
         <div class="play">
-          <i class="iconfont iconshipin">111111111111111111111111</i>
+          <i class="iconfont iconshipin"></i>
         </div>
       </div>
       <div class="bottom">
-        <span>{{ post.user.nickname }}222222222222222222</span>
+        <span>{{ post.user.nickname }}</span>
         <span>{{ post.comments.length }}跟帖</span>
       </div>
     </div>
@@ -23,7 +23,7 @@
           {{ post.title }}
         </div>
         <div class="bottom">
-          <span>{{ post.user.nickname }}333333333333</span>
+          <span>{{ post.user.nickname }}</span>
           <span>{{ post.comments.length }} 跟帖</span>
         </div>
       </div>
