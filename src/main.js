@@ -9,6 +9,7 @@ import router from './router'
 import HmHeader from './components/HmHeader.vue'
 import HmLogo from './components/HmLogo.vue'
 import HmButton from './components/HmButton.vue'
+import HmPost from './components/HmPost.vue'
 import moment from 'moment'
 import { List, Field, Toast, Cell, CellGroup, Dialog, Radio, RadioGroup, Uploader } from 'vant'
 Vue.use(List)
@@ -26,6 +27,7 @@ Vue.filter('date', function (value, format = 'YYYY-MM-DD') {
 Vue.component('hm-header', HmHeader)
 Vue.component('hm-logo', HmLogo)
 Vue.component('hm-button', HmButton)
+Vue.component('hm-post', HmPost)
 import axios from 'axios'
 axios.defaults.baseURL = 'http://localhost:3000'
 Vue.prototype.$axios = axios
