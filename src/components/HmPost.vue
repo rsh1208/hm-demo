@@ -23,7 +23,7 @@
           {{ post.title }}
         </div>
         <div class="bottom">
-          <span>{{ post.user.nickname }}</span>
+          <span>{{ post.user.nickname }}333333333333</span>
           <span>{{ post.comments.length }} 跟帖</span>
         </div>
       </div>
