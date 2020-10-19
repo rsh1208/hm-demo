@@ -74,6 +74,42 @@ export default {
       this.passwordErrMsg = "";
     },
     async startLogin() {
+      try {
+        await this.$dialog.confirm({
+          title: "提示",
+          message: "登录吗?",
+        });
+
+        console.log("确定");
+
+        let res = await this.$axios.post("/login", {
+          username: this.username,
+          password: this.password,
+        });
+
+        console.log("登录结果", res);
+        const { statusCode, message, data } = res.data;
+
+        // 1. 保存token + 用户id
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user_id", data.user.id);
+
+        // 2. 提示
+        this.$toast.success(message);
+
+        // 3. 跳转
+        if (this.$route.params.back) {
+          // 3.1 登录完返回   /detail ==> /login
+          this.$router.back();
+        } else {
+          // 3.2 登录去/user  直接访问的/login => /user
+          this.$router.push("/user");
+        }
+      } catch (error) {
+        console.log("取消");
+      }
+    },
+    async startLogin1() {
       if (
         this.username !== "" &&
         this.password !== "" &&

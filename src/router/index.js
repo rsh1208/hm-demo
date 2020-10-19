@@ -10,6 +10,7 @@ import MyFollow from '../views/MyFollow.vue'
 import MyComment from '../views/MyComment.vue'
 import MyStar from '../views/MyStar.vue'
 import Home from '../views/Home.vue'
+import Detail from '../views/Detail.vue'
 // 注册 
 Vue.use(VueRouter)
 const router = new VueRouter({
@@ -21,40 +22,53 @@ const router = new VueRouter({
     },
     {
       path: '/login',
+      name: 'login',
       component: Login
     },
     {
       path: '/register',
+      name: 'register',
       component: Register
     },
     {
       path: '/user',
+      name: 'user',
       component: Vser
     },
     {
       path: '/edit',
+      name: 'edit',
       component: Edit
     },
     {
       path: '/my-follow',
+      name: 'my-follow',
       component: MyFollow
     },
     {
       path: '/my-comment',
+      name: 'my-comment',
       component: MyComment
     },
     {
       path: '/my-star',
+      name: 'my-star',
       component: MyStar
     },
     {
       path: '/home',
+      name: 'home',
       component: Home
+    },
+    {
+      path: '/detail/:id',
+      name: 'detail',
+      component: Detail
     }
   ]
 })
 router.beforeEach((to, from, next) => {
-  const authPath = ['/user', '/my-follow', 'my-comments', '/my-star', '/edit']
+  const authPath = ['/user', '/my-follow', '/my-comments', '/my-star', '/edit']
   if (authPath.includes(to.path)) {
     const token = localStorage.getItem('token')
     if (token) {
@@ -66,4 +80,8 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 export default router

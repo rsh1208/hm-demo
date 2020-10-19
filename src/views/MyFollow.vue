@@ -45,7 +45,7 @@ export default {
       }
     },
     async follow() {
-      let res = await this.$axios.get("/user_follows/50");
+      let res = await this.$axios.get("/user_follows/20");
       this.getFollowsList();
     },
   },

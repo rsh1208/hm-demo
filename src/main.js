@@ -11,7 +11,11 @@ import HmLogo from './components/HmLogo.vue'
 import HmButton from './components/HmButton.vue'
 import HmPost from './components/HmPost.vue'
 import moment from 'moment'
-import { List, Field, Toast, Cell, CellGroup, Dialog, Radio, RadioGroup, Uploader } from 'vant'
+import { Sticky, PullRefresh, Tab, Tabs, List, Field, Toast, Cell, CellGroup, Dialog, Radio, RadioGroup, Uploader } from 'vant'
+Vue.use(Sticky)
+Vue.use(PullRefresh);
+Vue.use(Tab);
+Vue.use(Tabs);
 Vue.use(List)
 Vue.use(Field)
 Vue.use(Toast)
